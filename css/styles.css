@@ -1136,18 +1136,18 @@ strong.title-footer{
             width: 100%;
             height: 100%;
             background-color:rgba(0, 0, 0, 0.2);
-            opacity: 1;
-            visibility: visible;
-            transition:opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
-            transition: visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
-            }
+            transform: scale(1);
+            /*transition: opacity 2500ms, visibility 2500ms;*/
+             
+        }
 
 .backdrop.is-hidden{
+    transform: scale(0);
             opacity: 0;
             visibility: hidden;
             pointer-events: none;
-            transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
-            transition: visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+            
+            
          }
 
         .modal{
@@ -1245,24 +1245,29 @@ strong.title-footer{
                                         }
                     
                                         .group-title {
-                                            
+                                        display: block;
+                                        margin-left: auto;
+                                        margin-right: auto;
+                                        margin-bottom: 12px;
                                             font-weight: 700;
                                             font-size: 20px;
                                             line-height: 1.15;
                                             text-align: center;
+                                            align-items: center;
                                             letter-spacing: 0.03em;
                                             color: var(--color-main);
                                         }
 
                                         
                                         .form-field-container{
-                                         margin-top: 12px;
+                                            display: flex;
+                                         
                                          margin-bottom: 10px;
+                                         flex-direction: column;
+
                                         }
 .form-field{
 position: relative;
-padding-top: 12px;
-padding-bottom: 12px;
 
 
 }
@@ -1286,8 +1291,16 @@ left: 10px;}
 .form-field:focus{
 fill: var(--secondary-color);
 }
+
+.form-field:hover {
+    fill: var(--secondary-color);
+}
 input:hover + .form-icon,
 input:active + .form-icon{
+    fill: var(--secondary-color);
+}
+
+input:focus+.form-icon {
     fill: var(--secondary-color);
 }
 .input-form-color{
@@ -1299,6 +1312,7 @@ input:active + .form-icon{
     padding-left: 16px;
     padding-top: 15px;
     padding-bottom: 15px;
+    color: #c4c4c4;
 
 }
 
@@ -1381,6 +1395,7 @@ position: relative;
                                         .form-field textarea {
                                             border: 1px solid rgba(33, 33, 33, 0.2);
                                             border-radius: 4px;
+                                            height: 120px;
                                             transition-property: border;
                                                 transition-duration: 250ms;
                                                 transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -1424,8 +1439,15 @@ margin-bottom: 30px;
                                             margin-bottom: 40px;*/
                                             margin:0 auto;
                                             display: block;
+                                            font-family: 'Roboto';
+                                            align-items: center;
+                                            text-align: center;
+                                            letter-spacing: 0.06em;
                                             width: 200px;
                                             height: 50px;
+                                            font-weight: 700;
+                                            font-size: 16px;
+                                            line-height: 1.875;
                                             color: var(--minor-color);
                                             background: #188CE8;
                                             border:#188CE8 ;
@@ -1446,6 +1468,9 @@ margin-bottom: 30px;
 }
 
 .checkbox-control{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 16px;
     height: 15px;
     background:var(--minor-color);
